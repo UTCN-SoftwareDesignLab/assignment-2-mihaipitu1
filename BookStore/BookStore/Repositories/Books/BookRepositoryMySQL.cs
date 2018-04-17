@@ -84,7 +84,7 @@ namespace BookStore.Repositories.Books
             return books;
         }
 
-        public List<Book> FindByAuthor(string author)
+        public List<Book> FindBySpecification(string specification)
         {
             List<Book> books = new List<Book>();
             using (MySqlConnection connection = connectionWrapper.GetConnection())
@@ -92,27 +92,7 @@ namespace BookStore.Repositories.Books
                 connection.Open();
                 using (MySqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = String.Format("SELECT * FROM book WHERE author LIKE %{0}%",author);
-                    MySqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        books.Add(BuildFromReader(reader));
-                    }
-                }
-                connection.Close();
-            }
-            return books;
-        }
-
-        public List<Book> FindByGenre(string genre)
-        {
-            List<Book> books = new List<Book>();
-            using (MySqlConnection connection = connectionWrapper.GetConnection())
-            {
-                connection.Open();
-                using (MySqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = String.Format("SELECT * FROM book WHERE genre LIKE %{0}%",genre);
+                    command.CommandText = String.Format("SELECT * FROM book WHERE author LIKE '%{0}%' OR title LIKE '%{0}%' OR genre LIKE '%{0}%",specification);
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -153,26 +133,6 @@ namespace BookStore.Repositories.Books
                 using (MySqlCommand command = connection.CreateCommand())
                 {
                     command.CommandText = String.Format("SELECT * FROM book WHERE quantity = {0}",quantity);
-                    MySqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        books.Add(BuildFromReader(reader));
-                    }
-                }
-                connection.Close();
-            }
-            return books;
-        }
-
-        public List<Book> FindByTitle(string title)
-        {
-            List<Book> books = new List<Book>();
-            using (MySqlConnection connection = connectionWrapper.GetConnection())
-            {
-                connection.Open();
-                using (MySqlCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = String.Format("SELECT * FROM book WHERE title LIKE %{0}%",title);
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
