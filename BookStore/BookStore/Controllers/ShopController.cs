@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStore.Models;
 using BookStore.Services.Books;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -15,85 +17,32 @@ namespace BookStore.Controllers
         {
             this.bookService = bookService;
         }
-        public ActionResult Index()
+        public ActionResult Index(string description)
         {
             var books = bookService.GetBooks();
+            if(!String.IsNullOrEmpty(description))
+            {
+                books = bookService.GetBooksBySpecification(description);
+            }
             return View(books);
         }
-
-        // GET: Shop/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Sell(int id)
         {
-            return View();
+            var book = bookService.GetBookById(id);
+            return View(book);
         }
 
-        // GET: Shop/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Shop/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Sell(Book book, int quantity)
         {
-            try
+            var newBook = bookService.GetBookById(book.GetId());
+            if(quantity > newBook.GetQuantity())
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
+                return StatusCode(404);
             }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Shop/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: Shop/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: Shop/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: Shop/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            newBook.SetQuantity(newBook.GetQuantity() - quantity);
+            bookService.UpdateBook(newBook);
+            return RedirectToAction("Index", "Shop");
         }
     }
 }

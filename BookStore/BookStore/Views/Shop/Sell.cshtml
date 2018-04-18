@@ -1,0 +1,30 @@
+﻿@model BookStore.Models.Book
+
+@{
+    ViewData["Title"] = "Sell";
+}
+
+<h2>Sell</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Sell">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <p>How many books do you want to sell?</p>
+                <label asp-for="Quantity" class="control-label"></label>
+                @Html.Editor("Quantity")
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sell Book(s)" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Cancel selling</a>
+</div>
+

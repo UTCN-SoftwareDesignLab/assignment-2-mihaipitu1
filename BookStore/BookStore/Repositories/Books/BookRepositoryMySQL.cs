@@ -92,7 +92,7 @@ namespace BookStore.Repositories.Books
                 connection.Open();
                 using (MySqlCommand command = connection.CreateCommand())
                 {
-                    command.CommandText = String.Format("SELECT * FROM book WHERE author LIKE '%{0}%' OR title LIKE '%{0}%' OR genre LIKE '%{0}%",specification);
+                    command.CommandText = String.Format("SELECT * FROM book WHERE author LIKE '%{0}%' OR title LIKE '%{0}%' OR genre LIKE '%{0}%'",specification);
                     MySqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
