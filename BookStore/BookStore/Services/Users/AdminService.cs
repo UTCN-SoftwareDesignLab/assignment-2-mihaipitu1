@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookStore.Services.Users
 {
-    public interface AdminService
+    public interface IAdminService
     {
         bool CreateUser(User user);
 

@@ -2321,7 +2321,7 @@ function setMatcher( preFilter, selector, matcher, postFilter, postFinder, postS
 			if ( postFinder ) {
 				postFinder( null, results, matcherOut, xml );
 			} else {
-				push.apply( results, matcherOut );
+                push.apply(results, matcherOut);
 			}
 		}
 	});

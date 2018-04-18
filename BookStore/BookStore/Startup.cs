@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookStore.Database;
+using BookStore.Repositories.Books;
+using BookStore.Repositories.Users;
+using BookStore.Services.Authentication;
+using BookStore.Services.Books;
+using BookStore.Services.Users;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,6 +28,13 @@ namespace BookStore
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddTransient<DBConnectionWrapper>(_ => new DBConnectionFactory().GetConnectionWrapper(false));
+
+            services.AddScoped<IBookRepository, BookRepositoryMySQL>();
+            services.AddScoped<IUserRepository, UserRepositoryMySQL>();
+            services.AddScoped<IAuthenticationService, AuthenticationServiceMySQL>();
+            services.AddScoped<IBookService,BookServiceMySQL>();
+            services.AddScoped<IAdminService, AdminServiceMySQL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,7 +56,7 @@ namespace BookStore
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Login}/{action=Login}/{id?}");
             });
         }
     }

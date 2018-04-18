@@ -17,6 +17,7 @@ namespace BookStore.Services.Books
 
         public bool CreateBook(Book book)
         {
+            book.SetId(GetMaxId());
             return bookRepo.Create(book);
         }
 
@@ -48,6 +49,20 @@ namespace BookStore.Services.Books
         public bool UpdateBook(Book book)
         {
             return bookRepo.Update(book);
+        }
+
+        private long GetMaxId()
+        {
+            var books = bookRepo.FindAll();
+            long id = 0;
+            foreach(var book in books)
+            {
+                if(book.GetId()>id)
+                {
+                    id = book.GetId();
+                }
+            }
+            return id + 1;
         }
     }
 }

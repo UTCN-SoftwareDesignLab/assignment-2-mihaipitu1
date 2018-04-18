@@ -6,3 +6,6 @@ C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\De
 C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.csproj.CoreCompileInputs.cache
 C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.AssemblyInfoInputs.cache
 C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.AssemblyInfo.cs
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\bin\Debug\netcoreapp2.0\BookStore.pdb
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.dll
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.pdb

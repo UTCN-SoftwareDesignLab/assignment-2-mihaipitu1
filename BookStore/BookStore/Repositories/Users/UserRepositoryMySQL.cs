@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Assignment1.Database;
+using BookStore.Database;
 using BookStore.Models;
 using BookStore.Models.Builders;
 using MySql.Data.MySqlClient;
@@ -28,7 +28,7 @@ namespace BookStore.Repositories.Users
                 using (MySqlCommand command = connection.CreateCommand())
                 {
                     bool isAdmin = false;
-                    if (t.GetRole().RoleName == Constants.Roles.ADMIN)
+                    if (t.GetRole().RoleName == Database.Constants.Roles.ADMIN)
                         isAdmin = true;
                     command.CommandText = String.Format("Insert into user(id, name, username, password, isAdmin) VALUES('{0}', '{1}', '{2}', '{3}', '{4}'); ", t.GetId(), t.GetName(), t.GetUsername(), t.GetPassword(), isAdmin ? 1 : 0);
                     command.ExecuteNonQuery();
@@ -141,11 +141,11 @@ namespace BookStore.Repositories.Users
             Role role = new Role(null,null);
             if (reader.GetBoolean(4))
             {
-                role = GetRoleFromRights(Constants.Roles.ADMIN);
+                role = GetRoleFromRights(Database.Constants.Roles.ADMIN);
             }
             else
             {
-                role = GetRoleFromRights(Constants.Roles.EMPLOYEE);
+                role = GetRoleFromRights(Database.Constants.Roles.EMPLOYEE);
             }
             return new UserBuilder()
                 .SetId(reader.GetInt64(0))
@@ -159,16 +159,16 @@ namespace BookStore.Repositories.Users
         private Role GetRoleFromRights(string role)
         {
             List<Right> rights = new List<Right>();
-            if (role == Constants.Roles.ADMIN)
+            if (role == Database.Constants.Roles.ADMIN)
             {
-                foreach (var right in Constants.Rights.ADMIN_RIGHTS)
+                foreach (var right in Database.Constants.Rights.ADMIN_RIGHTS)
                 {
                     rights.Add(new Right(right));
                 }
             }
             else
             {
-                foreach (var right in Constants.Rights.USER_RIGHTS)
+                foreach (var right in Database.Constants.Rights.USER_RIGHTS)
                 {
                     rights.Add(new Right(right));
                 }

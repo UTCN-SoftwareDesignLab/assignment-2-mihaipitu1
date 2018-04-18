@@ -28,7 +28,7 @@ namespace BookStore.Services.Authentication
             string sha256Str = string.Empty;
             foreach (byte b in cryString)
             {
-                sha256Str += cryString.ToString();
+                sha256Str += b.ToString("x");
             }
             return sha256Str;
         }
