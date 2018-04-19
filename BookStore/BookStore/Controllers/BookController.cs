@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookStore.Models;
 using BookStore.Services.Books;
+using BookStore.Utilities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -66,6 +67,17 @@ namespace BookStore.Controllers
         {
             bookService.DeleteBook(book);
             return RedirectToAction("Index", "Book");
+        }
+
+        public ActionResult Report()
+        {
+            return View();
+        }
+
+        public ActionResult GenerateReport(string fileType)
+        {
+            var books = bookService.GetBooksByQuantity(0);
+            return new ConcreteFileFactory().GetFile(books, fileType);
         }
     }
 }

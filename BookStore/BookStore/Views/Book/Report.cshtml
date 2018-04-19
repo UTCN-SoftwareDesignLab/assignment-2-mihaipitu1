@@ -1,0 +1,23 @@
+﻿@model IEnumerable<BookStore.Models.Book>
+
+@{
+    ViewData["Title"] = "Report";
+}
+
+<h2>Generate Report</h2>
+
+<div class="row">
+    <form asp-action="GenerateReport">
+        <p>What type of file do you want?</p>
+            <div class="form-group">
+                <label>.csv File</label>@Html.RadioButton("fileType", "csv")
+                <label>.pdf File</label>@Html.RadioButton("fileType", "pdf")
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Generate" class="btn btn-default" />
+            </div>
+    </form>
+</div>
+
+
+
