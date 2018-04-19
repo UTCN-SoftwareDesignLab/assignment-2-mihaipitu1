@@ -12,7 +12,7 @@ namespace BookStore.Utilities
 {
     public class PdfFileGenerator : IFileFactory
     {
-        public FileStreamResult GenerateFileStream(List<Book> books)
+        public FileStream GenerateFileStream(List<Book> books)
         {
             MemoryStream mem = new MemoryStream();
             Document doc = new Document();
@@ -27,7 +27,9 @@ namespace BookStore.Utilities
                 doc.Add(new Paragraph(String.Format("{0}. {1} - {2} - Genre: {3} - Price {4}",book.GetId(),book.GetTitle(),book.GetAuthor(),book.GetGenre(),book.GetPrice())));
             }
             doc.Close();
-            return new FileStreamResult(mem, "application/pdf") { FileDownloadName = "report.pdf"};
+            FileStream file = new FileStream("report.pdf", FileMode.Create, FileAccess.ReadWrite);
+            mem.WriteTo(file);
+            return file;
         }
     }
 }

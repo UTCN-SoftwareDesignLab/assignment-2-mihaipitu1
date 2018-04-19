@@ -11,7 +11,7 @@ namespace BookStore.Utilities
 {
     public class CsvFileGenerator : IFileFactory
     {
-        public FileStreamResult GenerateFileStream(List<Book> books)
+        public FileStream GenerateFileStream(List<Book> books)
         {
             using (var mem = new MemoryStream())
             using (var writer = new StreamWriter(mem))
@@ -33,7 +33,10 @@ namespace BookStore.Utilities
                     csvWriter.NextRecord();
                 }
 
-                return new FileStreamResult(mem, "text/csv") { FileDownloadName = "report.csv"; };
+                writer.Flush();
+                FileStream file = new FileStream("report.csv",FileMode.Create,FileAccess.ReadWrite);
+                mem.WriteTo(file);
+                return file;
             }
         }
     }

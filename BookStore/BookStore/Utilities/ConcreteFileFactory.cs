@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,8 +14,9 @@ namespace BookStore.Utilities
         {
             switch(fileType)
             {
-                case "csv": return new CsvFileGenerator().GenerateFileStream(books);
-                case "pdf": return new PdfFileGenerator().GenerateFileStream(books);
+                case "csv": return new FileStreamResult(new CsvFileGenerator().GenerateFileStream(books),"text/csv");
+
+                case "pdf": return new FileStreamResult(new PdfFileGenerator().GenerateFileStream(books),"application/pdf");
                 default: return null;
             }
         }

@@ -10,6 +10,6 @@ namespace BookStore.Utilities
 {
     public interface IFileFactory
     {
-        FileStreamResult GenerateFileStream(List<Book> books);
+        FileStream GenerateFileStream(List<Book> books);
     }
 }
