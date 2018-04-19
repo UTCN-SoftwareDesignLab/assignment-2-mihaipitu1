@@ -40,6 +40,7 @@ namespace BookStore.Services.Users
 
         public bool UpdateUser(User user)
         {
+            user.SetPassword(EncodePassword(user.GetPassword()));
             return userRepo.Update(user);
         }
         
