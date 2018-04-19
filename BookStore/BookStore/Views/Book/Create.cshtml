@@ -1,12 +1,11 @@
 ﻿@model BookStore.Models.Book
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "New book";
 }
 
-<h2>Create</h2>
+<h2>Add a book</h2>
 
-<h4>Book</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -45,9 +44,5 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back to all books</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

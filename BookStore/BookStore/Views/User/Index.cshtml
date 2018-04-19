@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<BookStore.Models.User>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Users";
 }
 
-<h2>Index</h2>
+<h2>Users</h2>
 
 <p>
-    <a asp-action="Create">Create New</a> |
+    <a asp-action="Create">Create New User</a> |
     <a asp-controller="Book" asp-action="Index">Go to Books</a>
 </p>
 <table class="table">
@@ -18,6 +18,9 @@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role.RoleName)
                 </th>
             <th></th>
         </tr>
@@ -30,6 +33,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role.RoleName)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) | 
