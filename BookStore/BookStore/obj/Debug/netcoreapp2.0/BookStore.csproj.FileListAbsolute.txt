@@ -9,8 +9,4 @@ C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\De
 C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\bin\Debug\netcoreapp2.0\BookStore.pdb
 C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.dll
 C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\Debug\netcoreapp2.0\BookStore.pdb
-C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\bin\Debug\netcoreapp2.0\NUnit3.TestAdapter.dll
-C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\bin\Debug\netcoreapp2.0\NUnit3.TestAdapter.pdb
-C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\bin\Debug\netcoreapp2.0\nunit.engine.netstandard.dll
-C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\bin\Debug\netcoreapp2.0\Mono.Cecil.dll
 C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStore\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

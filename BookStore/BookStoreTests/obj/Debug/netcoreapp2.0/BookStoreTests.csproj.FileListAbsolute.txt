@@ -1,0 +1,17 @@
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\BookStoreTests.deps.json
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\BookStoreTests.runtimeconfig.json
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\BookStoreTests.runtimeconfig.dev.json
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\BookStoreTests.dll
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\BookStoreTests.pdb
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\BookStore.dll
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\bin\Debug\netcoreapp2.0\BookStore.pdb
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\obj\Debug\netcoreapp2.0\BookStoreTests.csprojResolveAssemblyReference.cache
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\obj\Debug\netcoreapp2.0\BookStoreTests.csproj.CoreCompileInputs.cache
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\obj\Debug\netcoreapp2.0\BookStoreTests.AssemblyInfoInputs.cache
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\obj\Debug\netcoreapp2.0\BookStoreTests.AssemblyInfo.cs
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\obj\Debug\netcoreapp2.0\BookStoreTests.csproj.CopyComplete
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\obj\Debug\netcoreapp2.0\BookStoreTests.dll
+C:\Users\mihai.pitu\Desktop\Facultate\SD\Assignment 2\BookStore\BookStoreTests\obj\Debug\netcoreapp2.0\BookStoreTests.pdb
